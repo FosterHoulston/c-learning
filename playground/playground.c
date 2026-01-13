@@ -1,30 +1,31 @@
 #include <stdio.h>
-#include <stdbool.h>
+#include <string.h>
 
 int main(){
 
-  float gpa = 2.5;
-  float price = 25.50;
-  double temperature = 10.141592653512354;
-  char grade = 'A';
-  char name[] = "Foster";
-  char food[] = "Pizza";
-  bool isOnline = false;
+  // SHOPPING CART PROGRAM
+  char item[50] = "";
+  float price = 0.0f;
+  int quantity = 0;
+  char currency = '$';
+  float total = 0.0f;
 
+  printf("What item would you like to buy? ");
+  fgets(item, sizeof(item), stdin);
+  // remove the newline character from input
+  item[strlen(item) - 1] = '\0';
 
-  printf("Your gpa is %.1f\n", gpa);
-  printf("The price is $%f\n", price);
-  printf("The temperature is %.15f\n", temperature);
-  printf("Your grade is %c\n", grade);
-  printf("Hello %s\n", name);
-  printf("Your favorite food is %s\n", food);
-  printf("%d is online\n", isOnline);
+  printf("What is the price of each? ");
+  scanf("%f", &price);
 
-  if (isOnline){
-    printf("They are online.");
-  } else{
-    printf("They are not online.");
-  }
+  printf("How many would you like? ");
+  scanf("%d", &quantity);
+
+  total = price * quantity;
+
+  printf("You have bougth %d %ss\n", quantity, item);
+  printf("%c%.2f", currency, total);
+  
 
   return 0;
 }
