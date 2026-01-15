@@ -1,29 +1,36 @@
 #include <stdio.h>
-#include <stdbool.h>
+#include <string.h>
+#include <math.h>
 
 int main(){
 
-  float gpa = 2.5;
-  float price = 25.50;
-  double temperature = 10.141592653512354;
-  char grade = 'A';
-  char name[] = "Foster";
-  char food[] = "Pizza";
-  bool isOnline = false;
+  // WEIGHT CONVERTER PROGRAM
+  
+  int choice = 0;
+  float pounds = 0.0f;
+  float kilograms = 0.0f;
 
+  printf("Weight Conversion Calculator\n");
+  printf("1. Kilograms to Pounds\n");
+  printf("2. Pounds to Kilograms\n");
+  printf("Enter your choice (1 or 2): ");
+  scanf("%d", &choice);
 
-  printf("Your gpa is %.1f\n", gpa);
-  printf("The price is $%f\n", price);
-  printf("The temperature is %.15f\n", temperature);
-  printf("Your grade is %c\n", grade);
-  printf("Hello %s\n", name);
-  printf("Your favorite food is %s\n", food);
-  printf("%d is online\n", isOnline);
-
-  if (isOnline){
-    printf("They are online.");
+  if(choice == 1){
+    // kg to lb
+    printf("Enter the weight in kilograms: ");
+    scanf("%f", &kilograms);
+    pounds = kilograms * 2.20462;
+    printf("%.2f kilograms is equal to %.2f pounds\n", kilograms, pounds);
+  }
+  else if(choice == 2){
+    // lb to kg
+    printf("Enter the weight in pounds: ");
+    scanf("%f", &pounds);
+    kilograms = pounds / 2.20462;
+    printf("%.2f pounds is equal to %.2f kilograms\n", pounds, kilograms);
   } else{
-    printf("They are not online.");
+    printf("Invalid choice! Please enter 1 or 2\n");
   }
 
   return 0;
