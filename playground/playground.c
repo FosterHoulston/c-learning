@@ -4,42 +4,34 @@
 
 int main(){
 
-  // x = sqrt(x);
-  // x = pow(x, 4);
-  // x = round(x);
-  // x = ceil(x);
-  // x = floor(x);
-  // x = abs(x);
-  // x = log(x);
-  // x = sin(x);
-  // x = cos(x);
+  // WEIGHT CONVERTER PROGRAM
+  
+  int choice = 0;
+  float pounds = 0.0f;
+  float kilograms = 0.0f;
 
-  // COMPOUND INTEREST CALCULATOR
+  printf("Weight Conversion Calculator\n");
+  printf("1. Kilograms to Pounds\n");
+  printf("2. Pounds to Kilograms\n");
+  printf("Enter your choice (1 or 2): ");
+  scanf("%d", &choice);
 
-  double principal = 0.0;
-  double rate = 0.0;
-  int years = 0;
-  int timesCompounded = 0;
-  double total = 0.0;
-
-  printf("Compound Interest Calculator\n");
-
-  printf("Enter the principal (P): ");
-  scanf("%lf", &principal);
-
-  printf("Enter the interest rate % (r): ");
-  scanf("%lf", &rate);
-  rate = rate / 100;
-
-  printf("Enter the # of years (t): ");
-  scanf("%d", &years);
-
-  printf("Enter # of times compounded per year (n): ");
-  scanf("%d", &timesCompounded);
-
-  total = principal * pow(1 + rate / timesCompounded, timesCompounded * years);
-
-  printf("After %d years, the total will be $%.2lf", years, total);
+  if(choice == 1){
+    // kg to lb
+    printf("Enter the weight in kilograms: ");
+    scanf("%f", &kilograms);
+    pounds = kilograms * 2.20462;
+    printf("%.2f kilograms is equal to %.2f pounds\n", kilograms, pounds);
+  }
+  else if(choice == 2){
+    // lb to kg
+    printf("Enter the weight in pounds: ");
+    scanf("%f", &pounds);
+    kilograms = pounds / 2.20462;
+    printf("%.2f pounds is equal to %.2f kilograms\n", pounds, kilograms);
+  } else{
+    printf("Invalid choice! Please enter 1 or 2\n");
+  }
 
   return 0;
 }
