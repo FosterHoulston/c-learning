@@ -1,3 +1,3 @@
 # c-learning
 
-Collection of personal learnig projects for C language. + Practice excersises.
+Collection of personal learnig projects for C language + Practice excersises.
